@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, NavLink, Redirect } from 'react-router-dom'
 
 // Styles
 import 'bootstrap/dist/css/bootstrap.css' 
@@ -36,6 +36,10 @@ function App() {
 
 			<Route path="/items/:id">
 				<Item />
+			</Route>
+
+			<Route path="*">
+				<Redirect to="/" />
 			</Route>
 		</Switch>
 
