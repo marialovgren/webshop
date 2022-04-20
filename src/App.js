@@ -1,10 +1,14 @@
-import './App.css'
 import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom'
+
+// Styles
+import 'bootstrap/dist/css/bootstrap.css' 
+import './App.css'
 
 // page components
 import Home from './pages/Home'
 import Contact from './pages/Contact'
 import About from './pages/About'
+import Item from './pages/Item'
 
 function App() {
   return (
@@ -28,6 +32,10 @@ function App() {
 
 			<Route path="/contact">
 				<Contact />
+			</Route>
+
+			<Route path="/items/:id">
+				<Item />
 			</Route>
 		</Switch>
 
