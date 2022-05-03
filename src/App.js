@@ -5,10 +5,10 @@ import 'bootstrap/dist/css/bootstrap.css'
 import './App.css'
 
 // page components
-import Home from './pages/Home'
-import Contact from './pages/Contact'
-import About from './pages/About'
-import Item from './pages/Item'
+import Home from './pages/home/Home'
+import Contact from './pages/contact/Contact'
+import About from './pages/about/About'
+import Item from './pages//item/Item'
 
 function App() {
   return (
