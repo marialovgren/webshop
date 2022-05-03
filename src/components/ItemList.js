@@ -11,6 +11,7 @@ export default function ItemList ({ items }) {
                 <div key={item.id} className="card">
                 <h3>{item.title}</h3>
                 <p>{item.price}</p>
+                <p>{item.body.substring(0, 100)}...</p>
                 
                 <span className="thumbnailImg">
                     <Image src={item.image} thumbnail />

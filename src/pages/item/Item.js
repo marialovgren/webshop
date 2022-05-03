@@ -2,6 +2,9 @@ import { useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { useFetch } from '../../hooks/useFetch'
 
+// styles
+import './Item.css'
+
 export default function Item() {
     const { id } = useParams()
     const url = 'http://localhost:3001/items/' + id
@@ -19,16 +22,16 @@ export default function Item() {
     
 
     return (
-        <div>
-            { isPending && <div>Loading...</div> }
-            { error && <div>{error}</div> }
+        <div className="item">
+            { isPending && <p className="loading">Loading...</p> }
+            { error && <p className="error">{error}</p> }
             { item && (
-                <div>
-                    <h2>{item.title}</h2>
+                <>
+                    <h2 className="page-title">{item.title}</h2>
                     <p>Price: {item.price}</p>
-                    <p>{item.body}</p>
+                    <p className="itemInfo">{item.body}</p>
                     <img src={item.image} alt="Handmade bag" />
-                </div>
+                </>
             )}
         </div>
     )
