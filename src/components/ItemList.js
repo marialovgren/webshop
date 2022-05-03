@@ -1,9 +1,8 @@
-// styles
-import './ItemList.css'
-
-
 import { Link } from 'react-router-dom'
 import Image from 'react-bootstrap/Image'
+
+// styles
+import './ItemList.css'
 
 export default function ItemList ({ items }) {
     return (
@@ -22,7 +21,7 @@ export default function ItemList ({ items }) {
                 </div>
             ))}
         </div>
-        
     )
 }
+
 
