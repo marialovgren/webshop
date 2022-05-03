@@ -12,8 +12,8 @@ export default function Home() {
     return (
       <div className="home">
           <h2>Our Handmade bags</h2>
-          {isPending && <div>Loading...</div>}
-          {error && <div>{error}</div>}
+          {error && <p className="error">{error}</p>}
+          {isPending && <p className="loading">Loading...</p>}
 
           {items && items.map((item) => (
               <div key={item.id} className="card">

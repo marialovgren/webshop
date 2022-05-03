@@ -1,10 +1,11 @@
-import { BrowserRouter, Route, Switch, NavLink, Redirect } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 
 // Styles
 import 'bootstrap/dist/css/bootstrap.css' 
 import './App.css'
 
 // page components
+import Navbar from './components/Navbar'
 import Home from './pages/home/Home'
 import Contact from './pages/contact/Contact'
 import About from './pages/about/About'
@@ -14,12 +15,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <nav>
-          <h1>Handmade handbags</h1>
-		  <NavLink exact to="/">Home</NavLink>
-		  <NavLink to="/about">About</NavLink>
-		  <NavLink to="/contact">Contact</NavLink>
-        </nav>
+        <Navbar />
 
 		<Switch>
 			<Route exact path="/">
