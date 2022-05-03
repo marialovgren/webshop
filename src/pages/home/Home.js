@@ -1,12 +1,13 @@
 import { useFetch } from '../../hooks/useFetch'
-import { Link } from 'react-router-dom'
-import Image from 'react-bootstrap/Image'
 
 // styles
 import './Home.css'
 
+// components
+import ItemsList from '../../components/ItemList'
+
 export default function Home() {
-    const { data: items, isPending, error } = useFetch('http://localhost:3001/items')
+    const { data, isPending, error } = useFetch('http://localhost:3001/items')
 
 
     return (
@@ -15,19 +16,7 @@ export default function Home() {
           {error && <p className="error">{error}</p>}
           {isPending && <p className="loading">Loading...</p>}
 
-          {items && items.map((item) => (
-              <div key={item.id} className="card">
-                <h3>{item.title}</h3>
-                <p>{item.price}</p>
-                
-                <span className="thumbnailImg">
-                    <Image src={item.image} thumbnail />
-                </span>
-
-				<Link to={`/items/${item.id}`}>Read more...</Link>
-
-              </div>
-          ))}
+          {data && <ItemsList items={data} />}
         
       </div>
     )
